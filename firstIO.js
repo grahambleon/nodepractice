@@ -1,3 +1,6 @@
-var fs = require('fs')
+let fs = require('fs')
 
-fs.readFileSync('/path/to/file')
+let filePath = process.argv[2];
+let file = fs.readFileSync(filePath).toString()
+let lines = file.split("\n")
+console.log(lines.length - 1);
