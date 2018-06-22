@@ -1,11 +1,9 @@
 let fs = require('fs')
-
 let filePath = process.argv[2];
 
-function doneReading(err, fileContents){
+fs.readFile(filePath, function (err, data) {
 
-}
+  lines = data.toString().split('\n').length - 1;
 
-function countLines(callBack) {
-  fs.readFile(filePath, doneReading())
-}
+  console.log(lines);
+})
